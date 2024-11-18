@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.navbar {
+    background-color: #e53935;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .fa-bars {
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.navbar ul li a {
+    color: white;
+   
+}
+.navbar ul li:nth-child(1) a{
+    font-weight: bold;
+}
+.navbar ul li a .fa-bars {
+    margin-right: 5px;
+    font-size: 16px;
+}
+.menubar > ul > li {
+    padding: 15px 6px;
+    transition: 0.3s ease;
+}
+.menubar ul li:hover a {
+    color: yellow;
+}
+.menubar ul li:nth-child(1) {
+    margin-right: 50px;
+}
+.menubar ul li:nth-child(1) a {
+    color: white;
+}
+.menubar ul li:nth-child(1) .fa-bars {
+    color: white;
+    text-align: center;
+    margin-left: 40px;
+}
+/* ...SUBMENU..... */
+.menubar {
+    position: relative;
+}
+.submenu {
+    position: absolute;
+    background-color: white;
+    width: 280px;
+    height: auto;
+    left: 0;
+    top: 100%;
+    padding: 10px;
+    display: none;
+    z-index: 10;
+    border-radius: 5px;
+    margin-left: 45px;
+    border:1px solid #ccc;
+
+}
+.submenu ul {
+    display: flex;
+    flex-direction: column;
+}
+.submenu ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: black;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.submenu ul li a {
+    color: black;
+    display: block;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+.menubar ul li:hover .submenu {
+    display: block;
+}
+.submenu ul li:hover {
+    background-color: yellow;
+}
+.submenu ul li a {
+    color: rgb(20, 20, 20)!important;
+}
+.breadcrumb {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+/* ....sanpham.... */
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.image{
+    flex: 1;
+}
+.image img{
+  
+    border-radius: 8px;
+    width: 500px;
+    height: 450px;
+    margin-bottom: -20px;
+}
+.infor{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-bottom: 60px;
+}
+.infor h1{
+    font-size: 25px;
+    color: #222222;
+    margin: 0 0 10px;
+
+}
+.infor .price{
+    color: red;
+    font-size:28px;
+    margin:  0;
+    line-height: 1;
+    font-weight: bold;
+    
+}
+.infor p{
+    font-size: 16px;
+    color: #333333;
+    margin: 20px 0 10px;
+    flex: 1;
+   
+}
+.icon{
+   align-items: center;
+   display:flex;
+   margin-top: 10px;
+   gap:10px;
+   border-radius: 10px;
+}
+.icon li button{
+    border: none;
+    border-radius: 5px; /* Bo góc */
+    transition: border 0.3s ease; /* Hiệu ứng mượt khi hover */
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+}
+.icon li:hover button {
+    background-color: aqua;
+}
+/* .............buy............... */
+
+.buytop{
+    display: flex;
+    gap:20px
+}
+.buytop li button{
+    height: 40px;
+    background-color: #e12610;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 13px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    overflow: hidden; /* Đảm bảo không có nội dung nào vượt ra ngoài */
+    line-height: normal; /* Đảm bảo dòng không bị đè lên nhau */
+}
+.buytop li:nth-child(1) button{
+    width: 408.8px;
+}
+.buytop li:nth-child(2) button{
+    width: 258.2px;
+}
+.buytop li:hover button{
+    background-color: #fff;
+    border: 2px solid #e12610;
+    color: #e12610;
+    transition: color 0.3s ease;
+}
+.buynow li button{
+    color:#fff;
+    position: relative;
+    height: 40px;
+    background-color: #e12610;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 13px;
+    width: 408.8px;
+    border-radius: 10px;
+    cursor: pointer;
+   border: none;
+   overflow: hidden; /* Đảm bảo không có nội dung nào vượt ra ngoài */
+   line-height: normal; /* Đảm bảo dòng không bị đè lên nhau */
+
+}
+.buynow li:hover button{
+    background-color: #fff;
+    border: 2px solid #e12610;
+    color: #e12610;
+    transition: color 0.3s ease;
+}
+
+.buytop, .buynow{
+    margin-bottom: 20px;
+}
+/* .......phaan trang....... */
+.pagination{
+    display: flex;
+    align-items: center;
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+    margin-top: -20px;
+}
+.img-container {
+    position: relative; /* Để cho phép các hình ảnh được đặt tuyệt đối bên trong */
+    width: 200px; /* Chiều rộng container bằng chiều rộng của hình ảnh */
+    height: 200px; /* Chiều cao container bằng chiều cao của hình ảnh */
+    overflow: hidden; /* Ẩn phần nội dung vượt ra ngoài */
+}
+.img-container img{
+    position: absolute; /* Đặt hình ảnh ở vị trí tuyệt đối */
+    top: 0; /* Đặt phần trên cùng của hình ảnh */
+    left: 0; /* Đặt phần bên trái của hình ảnh */
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của container */
+    height: 80%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều cao của container */
+    transition: opacity 0.5s ease; /* Hiệu ứng chuyển tiếp cho độ mờ của hình ảnh */
+}
+.img-container img:not(:first-child) {
+    opacity: 0; /* Ảnh không đầu tiên ẩn đi */
+}
+.pagination button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Để cho phép sử dụng vị trí tuyệt đối bên trong */
+    overflow: hidden; /* Đảm bảo không có nội dung nào vượt ra ngoài */
+    margin: 0 60px; /* Khoảng cách giữa các nút */
+    font-size: 16px; /* Kích thước chữ */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển đổi */ 
+    transition: transfrom 0.3s ease;
+}
+.pagination button.prev {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.pagination button.next {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.carousel img {
+    width: 200px;
+    height: auto;
+    margin: 0 20px;
+}
+.pagination button:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
+/* Tạo hiệu ứng trượt cho cả hai nút khi hover */
+
+.pagination button.next:hover {
+    transform: translateX(-10px); /* Nút trước di chuyển 10px sang trái */
+}
+
+/* Khi hover vào nút tiếp theo, di chuyển nút tiếp theo */
+.pagination button.prev:hover {
+    transform: translateX(10px); /* Nút tiếp theo di chuyển 10px sang phải */
+}
+/* ...........................parameter........................................ */
+
+.parameterin {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các liên kết */
+    padding: 10px 20px;
+    font-weight: bold;
+    position: relative; /* Đảm bảo con cháu có thể định vị theo */
+    text-align: center;
+}
+
+.parameterin a {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+.box {
+    width: 80%; /* Hoặc đặt một chiều rộng cụ thể, ví dụ 600px */
+    max-width: 80%; /* Giới hạn chiều rộng tối đa của khung */
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-left: 0; /* Căn khung về phía bên trái */
+}
+ .box p {
+    margin-bottom: 15px; /* Khoảng cách dưới đoạn văn */
+}
+.box img {
+   width: 100%; /* Để hình ảnh vừa khít chiều ngang của khung */
+   height: auto; /* Giữ nguyên tỷ lệ ảnh */
+   border-radius: 5px; /* Bo tròn nhẹ cho ảnh nếu cần */
+}
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.header .left, .header .right {
+    display: flex;
+    align-items: center;
+}
+.header .left img {
+    height: 40px;
+    margin-right: 10px;
+}
+.header .left span {
+    margin-right: 20px;
+}
+.header .right a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.header .right a i {
+    margin-right: 5px;
+}
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+p {
+    margin: 10px 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin: 5px 0;
+}
+.address-list {
+    margin-top: 20px;
+}
+.address-list li {
+    margin-bottom: 10px;
+}
+.contact-info {
+    margin-top: 20px;
+}
+.image-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.image-container img {
+    max-width: 100%;
+    height: 70%;
+}
+.footer-link {
+    margin-top: 10px;
+}
+.footer {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer .column {
+    flex: 1;
+    padding: 0 10px;
+}
+.footer .column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer .column ul li {
+    margin-bottom: 5px;
+}
+.footer .column ul li a {
+    text-decoration: none;
+    color: #333;
+}
+.footer .column ul li a:hover {
+    text-decoration: underline;
+}
+.footer .social-media {
+    text-align: center;
+}
+.footer .social-media a {
+    text-decoration: none;
+    color: #333;
+}
+.footer .app-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .app-links img {
+    height: 40px;
+    margin: 0 5px;
+}
+.footer .bottom-links {
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.footer .bottom-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.footer .bottom-links ul li {
+    margin: 0 10px;
+}
+.footer .bottom-links ul li a {
+    text-decoration: none;
+    color: #333;
+}
+.footer .bottom-links ul li a:hover {
+    text-decoration: underline;
+}
+.footer .company-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}  
+/* search */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: white;
+}
+.search-bar input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.search-bar select, .search-bar button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.search-bar button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
