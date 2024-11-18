@@ -1,0 +1,1108 @@
+<html>
+ <head>
+  <title>
+   Cửa Hàng Xe Máy Bốn Anh Em
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header .left, .header .right {
+            display: flex;
+            align-items: center;
+        }
+        .header .left img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .left span {
+            margin-right: 20px;
+        }
+        .header .right a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .header .right a i {
+            margin-right: 5px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: white;
+        }
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar select, .search-bar button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .search-bar button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+        }
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            width: 80%;
+            padding-left: 20px;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            background-size: cover;
+      
+            
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .banner img {
+            width: 32%;
+            border-radius: 10px;
+        }
+        .cart {
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .cart h3 {
+            margin-top: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 50px;
+            height: auto;
+        }
+        .address-form {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 999;
+        }
+        
+        .address-form-content {
+            width: 476px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+        }
+        
+        .address-form-content form{
+            padding: 12px 40px;
+        }
+        .address-form-content h2{
+            font-size: 14px;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        .address-form-content h2 span{
+            display: block;
+            position: absolute;
+            height: 30px;
+            padding: 0 6px;
+            border: 1px solid #ddd;
+            right: 12px;
+            cursor: pointer;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 30px;
+            color: #333;
+            border-radius: 5px;
+        }
+        .address-form-content form p{
+            font-size: 16px;
+        }
+        .address-form-content form input,select{
+            height: 45px;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 6px;
+            border-radius: 5px;
+        }
+        .address-form-content form button{
+            margin-top: 20px;
+            height: 40px;
+            width: 80%;
+            cursor: pointer;
+            background-color: #f97e0e;
+            outline: none;
+            border: none;
+            color:#ddd;
+            border-radius: 5px;
+        }
+        
+        
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="left">
+    <img alt="Trai đẹp bán xe logo" height="40" src="../Đồ án xe máy/logo.jpg" width="40"/>
+    <span>
+     Trai đẹp bán xe
+    </span>
+    <span>
+    |
+    </span>
+    <span>
+     19002145
+    </span>
+    <span>
+    |
+    </span>
+    <span>
+     traidepbanxe123@gmail.com
+    </span>
+   </div>
+   <div class="right">
+    <a href="#">
+     <i class="fas fa-newspaper">
+     </i>
+     Tin Tức
+    </a>
+    <a href="#">
+     <i class="fas fa-phone">
+     </i>
+     Liên Hệ
+    </a>
+    <a class="ml-4 text-gray-800" href="cart.html" id="cart-icon">
+        <i class="fas fa-shopping-cart">
+        </i>
+        Giỏ hàng (
+        <span id="">
+         1
+        </span>
+        )
+       </a>
+    <a href="#">
+     <!-- <i class="fas fa-user-plus"> -->
+     </i>
+     Ngày mới tốt lành,Mr.lộc
+    </a>
+    <a href="index.html">
+        <i class="fas fa-sign-out-alt"></i>
+     Đăng Xuất
+    </a>
+   </div>
+  </div>
+  <div class="search-bar">
+   <input placeholder="Tìm kiếm..." type="text"/>
+   <button>
+    <a href="timkiem.html"><i class="fas fa-search"></i></a>
+    </i>
+   </button>
+   <button id="advanced-search-btn">
+    Tìm kiếm nâng cao <i class="fas fa-sort-down"></i>
+</button>
+</div>
+
+<div class="address-form" id="address-form">
+<div class="address-form-content">
+    <h2>Chọn các sản phẩm cần tìm<span id="address-close"> X Đóng</span></h2>
+    <form action="">
+        <select name="">
+            <option value="">--Sản phẩm</option>
+            <option value="tay ga">Xe tay ga</option>
+            <option value="số">Xe số/xe côn</option>
+            <option value="50cc">Xe dưới 50 phân khối</option>
+        </select>
+        <select name="">
+            <option value="">--Chọn Các Mức Giá</option>
+            <option value="price">10.000.000đ - 30.000.000đ</option>
+            <option value="price">30.000.000đ - 50.000.000đ</option>
+            <option value="price">50.000.000đ - 80.000.000đ</option>
+            <option value="price">Trên 80.000.000đ</option>
+        </select>
+        <select name="">
+            <option value="">--Tên Sản Phẩm</option>
+            <option value="name">Airblade</option>
+            <option value="name">SH</option>
+            <option value="name">Vision</option>
+            <option value="name">Wave</option>
+            <option value="name">Sirius</option>
+        </select>
+        <input type="text" placeholder="Hiệu năng/Hiệu số...(không bắt buộc)" />
+        <button type="submit"><a href="timkiem.html">Xác nhận</a></button>
+    </form>
+</div>
+</div>
+  <div class="main-content">
+   <div class="sidebar">
+    <h3>
+     DANH MỤC
+    </h3>
+    <ul>
+     <li>
+      <a href="#">
+       Tất Cả Sản Phẩm
+      </a>
+     </li>
+     <li>
+      <a href="timkiem.html">
+       Xe Tay Ga
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Xe Số &amp; Tay Côn
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Xe Điện và Xe 50cc
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Dịch Vụ
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Phụ Kiện
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="content">
+    <div class="carousel">
+     <img alt="Big Sale Yamaha PG-1" height="400" src="../Đồ án xe máy/bn10.jpg"  width="100"/>
+    </div>
+    <div class="banner">
+     <img alt="Motorbike 1" height="150" src="../Đồ án xe máy/bn2.png" width="150"/>
+     <img alt="Motorbike 2" height="150" src="../Đồ án xe máy/bn3.png" width="250"/>
+     <img alt="Motorbike 3" height="150" src="../Đồ án xe máy/bn4.png" width="250"/>
+    </div>
+   </div>
+  </div>
+ <head>
+  <title>
+   Motorbike Shop
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 sản phẩm mỗi hàng */
+            gap: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        .product-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        /* Hover effect for product card */
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Product image */
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Image hover effect */
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Product name styling */
+        .product-item h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* Product price styling */
+        .product-item .price {
+            color: #e53935;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        /* Add to cart button */
+        .product-item .add-to-cart {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            flex: 1;
+        }
+        
+        /* Add to cart button hover effect */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .buy-now {
+            background-color: black;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            flex: 1;
+        }
+        
+        .product-item .add-to-cart:hover {
+            background-color: #e53935;
+        }
+        
+        /* Icon in add-to-cart button */
+        .product-item .add-to-cart i {
+            margin-right: 5px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .product-list {
+                grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-list {
+                grid-template-columns: 1fr; /* 1 item per row */
+            }
+        }
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .pagination li {
+            margin: 0 5px;
+        }
+        .pagination a {
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 1px solid #007BFF;
+            color: #007BFF;
+            border-radius: 4px;
+        }
+        .pagination a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        .active a {
+            background-color: #007BFF;
+            color: white;
+        }
+        .modal {
+            display: none; /* Mặc định ẩn */
+            position: fixed;
+            z-index: 1000; /* Đảm bảo modal nằm trên các phần tử khác */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+          
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Modal content */
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        
+        /* Close button */
+        .close {
+            color: #aaa;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        /* Form input styling */
+        .modal-content form input,
+        .modal-content form select,
+        .modal-content form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        
+        .modal-content form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-content form button:hover {
+            background-color: #0056b3;
+        }
+  </style>
+ </head>
+  <div class="container">
+   <div class="header">
+    <h1>
+     TẤT CẢ XE MÁY
+    </h1>
+    <div>
+     <label for="sort">
+      Sắp xếp
+     </label>
+     <select id="sort">
+      <option value="default">
+       Tùy chọn
+      </option>
+      <option>
+        Xe Ga
+      </option>
+      <option>
+        Xe Số
+      </option>
+     </select>
+    </div>
+   </div>
+   
+   <div class="product-list">
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp1.png" height="200" alt="" width="200"></a>
+        <h2>Honda Vario 125 2023 - Phiên bản cao cấp</h2>
+        <div class="price">42,420,000đ</div>
+        <div class="button-group">
+        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+        <button class="buy-now">Mua Ngay</button>
+        </div>
+     </div>
+     <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp2.png" height="200" alt="" width="200"></a>
+        <h2>Honda SH 150i ABS</h2>
+        <div class="price">113,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href=""><img src="../Đồ án xe máy/sp3.png" height="200" alt="" width="200"></a>
+        <h2>Honda SH 150i CBS Tiêu Chuẩn - Màu Đỏ</h2>
+        <div class="price">95,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp4.png" height="200" alt="" width="200"></a>
+        <h2>Honda SH Mode ABS Cao Cấp - Màu Xám</h2>
+        <div class="price">62,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp5.webp" height="200" alt="" width="200"></a>
+        <h2>Honda Vario 160 CBS 2022</h2>
+        <div class="price">43,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp6.webp" height="200" alt="" width="200"></a>
+        <h2>Honda Vario 160 CBS 2022</h2>
+        <div class="price">43,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp7.png" height="200" alt="" width="200"></a>
+        <h2>Yamaha FreeGo ABS</h2>
+        <div class="price">34,900,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+    </div>
+    <div class="product-item">
+        <a href="chitietsp.html"><img src="../Đồ án xe máy/sp8.png" height="200" alt="" width="200"></a>
+        <h2>Honda SH 150i ABS Cao Cấp</h2>
+        <div class="price">105,500,000đ</div>
+        <div class="button-group">
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ</button> 
+            <button class="buy-now">Mua Ngay</button>
+            </div>
+       </div>   
+   </div>
+  </div>
+  <div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Đăng ký mua xe</h3>
+        <form>
+            <input type="text" placeholder="Họ tên" required>
+            <input type="tel" placeholder="Số điện thoại" required>
+            <select required>
+                <option>Honda Vario 125 2023 - Phiên bản cao cấp</option>
+                <option>Honda SH 150i ABS Cao Cấp</option>
+                <option>Yamaha FreeGo ABS</option>
+                <option>Honda Vario 160 CBS 2022</option>
+                <option>Honda SH Mode ABS Cao Cấp - Màu Xám</option>
+                <!-- Thêm các sản phẩm khác nếu cần -->
+            </select>
+            <input type="text" placeholder="Giá mong muốn trả trước">
+            <button type="submit">Gửi</button>
+        </form>
+    </div>
+</div>
+
+<script>// Lấy các phần tử modal và nút "Mua Ngay"
+    const modal = document.getElementById("buyModal");
+const buyNowButtons = document.querySelectorAll(".buy-now");
+const closeBtn = document.querySelector(".close");
+
+// Mở modal khi nhấn "Mua Ngay"
+buyNowButtons.forEach(button => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        modal.style.display = "flex"; // Hiển thị modal
+    });
+});
+
+// Đóng modal khi nhấn "X"
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none"; // Ẩn modal
+});
+
+// Đóng modal khi nhấn ngoài khu vực modal
+window.onclick = (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+document.getElementById("advanced-search-btn").addEventListener("click", function() {
+    document.getElementById("address-form").style.display = "flex";
+});
+
+// Close the modal
+document.getElementById("address-close").addEventListener("click", function() {
+    document.getElementById("address-form").style.display = "none";
+});
+
+
+
+
+
+    </script>
+  <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">&raquo;</a></li>
+</ul>
+  <div class="cart" id="cart">
+    <h3>Giỏ hàng của bạn:</h3>
+    <div id="cart-items"></div>
+    <button id="close-cart">Đóng</button>
+</div>
+
+<script>
+    var cart = [];
+    var cartCount = document.getElementById('cart-count');
+    var cartItemsContainer = document.getElementById('cart-items');
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            var title = this.getAttribute('data-title');
+            var price = this.getAttribute('data-price');
+            var img = this.getAttribute('data-img');
+
+            addItemToCart(title, price, img);
+            updateCartCount();
+        });
+    });
+
+    function addItemToCart(title, price, img) {
+        // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+        var existingItem = cart.find(item => item.title === title);
+        if (existingItem) { 
+           alert('Sản phẩm đã có trong giỏ hàng');
+            return;
+        }
+        
+        // Thêm sản phẩm vào giỏ hàng
+        var item = { title: title, price: price, img: img };
+        alert('Đã thêm sản phẩm vào giỏ hàng.');
+      
+        renderCart();
+       
+    }
+
+    function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        cart.forEach(item => {
+            var cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="${item.img}" alt="${item.title}">
+                <span>${item.title}</span>
+                <span>${item.price}</span>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+    }
+
+    function updateCartCount() {
+        cartCount.textContent = cart.length;
+    }
+
+    document.getElementById('cart-icon').addEventListener('click', function() {
+        document.getElementById('cart').style.display = 'block';
+    });
+
+    document.getElementById('close-cart').addEventListener('click', function() {
+        document.getElementById('cart').style.display = 'none';
+    });
+
+//  Xóa sản phẩm
+function renderCart() {
+    cartItemsContainer.innerHTML = '';
+    cart.forEach((item, index) => {
+        var cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <img src="${item.img}" alt="${item.title}">
+            <span>${item.title}</span>
+            <span>${item.price}</span>
+            <button class="remove-item" data-index="${index}">Xóa</button>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    // Thêm sự kiện cho các nút xóa
+    document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', function() {
+            var index = this.getAttribute('data-index');
+            removeItemFromCart(index);
+        });
+    });
+}
+
+
+function removeItemFromCart(index) {
+    cart.splice(index, 1); // Xóa sản phẩm tại chỉ số tương ứng
+    renderCart(); // Cập nhật lại giỏ hàng
+    updateCartCount(); // Cập nhật số lượng sản phẩm trong giỏ
+
+
+    const totalPages = 5;  // Tổng số trang
+    let currentPage = 1;   // Trang hiện tại
+
+    function updateContent() {
+        const contentDiv = document.getElementById("content");
+        contentDiv.innerHTML = `Nội dung trang ${currentPage}`;
+        document.getElementById("current-page").textContent = currentPage;
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updateContent();
+        }
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateContent();
+        }
+    }
+    document.getElementById("advanced-search-btn").addEventListener("click", function() {
+        document.getElementById("address-form").style.display = "flex";
+    });
+    
+    // Close the modal
+    document.getElementById("address-close").addEventListener("click", function() {
+        document.getElementById("address-form").style.display = "none";
+    });
+    
+    
+    
+    
+
+}</script>
+
+
+
+
+
+
+  <head>
+    <title>
+     Footer Example
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+     body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+          }
+          .footer {
+              background-color: #f9f9f9;
+              padding: 20px 0;
+              text-align: center;
+              color: #333;
+          }
+          .footer .container {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+          }
+          .footer .column {
+              flex: 1;
+              padding: 0 10px;
+          }
+          .footer .column h3 {
+              font-size: 16px;
+              font-weight: bold;
+              margin-bottom: 10px;
+          }
+          .footer .column ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+          }
+          .footer .column ul li {
+              margin-bottom: 5px;
+          }
+          .footer .column ul li a {
+              text-decoration: none;
+              color: #333;
+          }
+          .footer .column ul li a:hover {
+              text-decoration: underline;
+          }
+          .footer .social-media {
+              text-align: center;
+          }
+          .footer .social-media a {
+              text-decoration: none;
+              color: #333;
+          }
+          .footer .app-links {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+          .footer .app-links img {
+              height: 40px;
+              margin: 0 5px;
+          }
+          .footer .bottom-links {
+              background-color: #f1f1f1;
+              padding: 10px 0;
+              margin-top: 20px;
+          }
+          .footer .bottom-links ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+          }
+          .footer .bottom-links ul li {
+              margin: 0 10px;
+          }
+          .footer .bottom-links ul li a {
+              text-decoration: none;
+              color: #333;
+          }
+          .footer .bottom-links ul li a:hover {
+              text-decoration: underline;
+          }
+          .footer .company-info {
+              text-align: center;
+              margin-top: 10px;
+              font-size: 14px;
+              color: #666;
+          }
+    </style>
+   </head>
+   <body>
+    <div class="footer">
+     <div class="container">
+      <div class="column">
+       <h3>
+        CHĂM SÓC KHÁCH HÀNG
+       </h3>
+       <ul>
+        <li>
+         <a href="#">
+          Trung Tâm Trợ Giúp
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          Hướng Dẫn Mua Hàng
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          Chính Sách Vận Chuyển
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="column">
+       <h3>
+        VỀ CHÚNG TÔI
+       </h3>
+       <ul>
+        <li>
+         <a href="#">
+          Về Trai Đẹp Bán Xe
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          Chính Sách Thanh Toán
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          Điều Khoản Chính Sách
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="column">
+       <h3>
+        THEO DÕI CHÚNG TÔI
+       </h3>
+       <ul>
+        <li>
+         <a href="#">
+          <i class="fab fa-facebook">
+          </i>
+          Facebook
+         </a>
+        </li>
+        <li>
+            <a href="#">
+             <i class="fab fa-instagram">
+             </i>
+             Instagram
+            </a>
+           </li>
+       </ul>
+      </div>
+      
+     </div>
+     <div class="bottom-links">
+      <ul>
+       <li>
+        <a href="#">
+         CHÍNH SÁCH BẢO MẬT
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         QUY CHẾ HOẠT ĐỘNG
+        </a>
+       </li>
+       <li>
+        <a href="#">
+         TRẢ HÀNG &amp; HOÀN TIỀN
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="company-info">
+      <p>
+       CÔNG TY TNHH Bốn Anh Em
+      </p>
+      <p>
+       Địa chỉ: Đại Học Sài Gòn, Việt Nam.
+      </p>
+      <p>
+       Điện thoại: 19002145
+      </p>
+      <p>
+       Email: traidepbanxe123@gmail.com
+      </p>
+     </div>
+    </div>
+   </body>
+ </body>
+</html>
