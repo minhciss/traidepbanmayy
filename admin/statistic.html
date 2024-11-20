@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="inner-logo">
+            <a href="./index.html">
+                <img src="https://vinfastauto.com/themes/porto/img/logo-mobile.svg" alt="Logo" srcset="">
+            </a>
+        </div>
+        <div class="inner-user">
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+                <span>Thông báo</span>
+            </div>
+            <div class="infor-user">
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <span>Mr.Nghĩa</span>
+            </div>
+        </div>
+    </header>
+
+    <ul class="sider">
+            <li>
+                <div class="inner-icon">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <a href="./index.html">Tổng quan</a>
+            </li>
+            <li>
+                <div class="inner-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <a href="./manage-client.html">Quản lý người dùng</a>
+            </li>
+            <li>
+                <div class="inner-icon">
+                    <i class="fa-brands fa-product-hunt"></i>
+                </div>
+                <a href="./manage-product.html">Quản lý sản phẩm</a>
+            </li>
+            <li>
+                <div class="inner-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <a href="./manage-order.html">Quản lý đơn hàng</a>
+            </li>
+            <li class="active">
+                <div class="inner-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <a href="./statistic.html">Thống kê kinh doanh</a>
+            </li>
+     </ul>
+    <div class="content">
+        <h2>Thống kê kinh doanh</h2>
+        <div class="card mb-3">
+            <div class="card-header bg-success font-weight-bold">Bộ lọc</div>
+            <div class="card-body">
+                <form action="./statistic.html">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="date-start">Thời gian bắt đầu</label>
+                                <input class="form-control" type="date" value="2024-01-01" name="date-start" id="date-start">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="date-end">Thời gian kết thúc</label>
+                                <input class="form-control" type="date" value="2024-01-02" name="date-end" id="date-end">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Thống kê
+                    </button>
+                </form>
+            </div>
+        </div>
+        <h4>Danh sách mặt hàng được bán ra</h4>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="bg-success">
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HONDA WINNER X 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://hondathanhbinhan.com/wp-content/uploads/2024/01/winner-x-2024.png" alt="" srcset="">
+                    </td>
+                    <td>46.690.000 VND</td>
+                    <td>12</td>
+                    <td>560.280.000 VND</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HONDA SH MODE 125 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://hondathanhbinhan.com/wp-content/uploads/2024/04/sh-mode-125-2024-cao-cap-do-den.png" alt="" srcset="">
+                    </td>
+                    <td>87.990.000 VND</td>
+                    <td>12</td>
+                    <td>1.055.880.000 VND</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>HONDA WAVE RSX 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUMYcDjp-i_pEvWPSqyQmNrIFKFszpRIkLHg&s" alt="" srcset=""/>
+                    </td>
+                    <td>21.750.000 VND</td>
+                    <td>12</td>
+                    <td>261.000.000 VND</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>YAMAHA GRANDE 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq-AVHXW9foO2slyA_1sot2vTiI6nsdXu-Aw&s" alt="" srcset=""/>
+                    </td>
+                    <td>27.890.000 VND</td>
+                    <td>12</td>
+                    <td>334.680.000 VND</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <!-- Di chuyển bảng "Người mua hàng nhiều nhất" lên trước phân trang -->
+        <h4>Người mua hàng nhiều nhất</h4>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="bg-info">
+                <tr>
+                    <th>STT</th>
+                    <th>Tên người mua</th>
+                    <th>Tổng số đơn hàng</th>
+                    <th>Chi tiết hóa đơn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Trung Nghĩa</td>
+                    <td>5</td>
+                    <td><a href="./order-detail.html?buyer_id=1" class="btn btn-primary">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nguyễn Văn Lộc</td>
+                    <td>2</td>
+                    <td><a href="./order-detail.html?buyer_id=1" class="btn btn-primary">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tạ Thị Linh</td>
+                    <td>2</td>
+                    <td><a href="./order-detail.html?buyer_id=1" class="btn btn-primary">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Nguyễn Xuân Khánh</td>
+                    <td>2</td>
+                    <td><a href="./order-detail.html?buyer_id=1" class="btn btn-primary">Xem chi tiết</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Bùi Văn Cương</td>
+                    <td>2</td>
+                    <td><a href="./order-detail.html?buyer_id=1" class="btn btn-primary">Xem chi tiết</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    <h4>Danh sách sản phẩm bán chạy nhất</h4>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="bg-success">
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HONDA WINNER X 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://hondathanhbinhan.com/wp-content/uploads/2024/01/winner-x-2024.png" alt="" srcset="">
+                    </td>
+                    <td>46.690.000 VND</td>
+                    <td>12</td>
+                    <td>560.280.000 VND</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Danh sách sản phẩm bán ế nhất</h4>
+        <table class="table table-hover table-bordered text-center">
+            <thead class="bg-success">
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>YAMAHA GRANDE 2024</td>
+                    <td class="table_inner-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq-AVHXW9foO2slyA_1sot2vTiI6nsdXu-Aw&s" alt="" srcset="">
+                    </td>
+                    <td>27.890.000 VND</td>
+                    <td>12</td>
+                    <td>334.680.000 VND</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="inner-pagination">
+            <ul class="pagination">
+                <li class="page-item ">
+                    <a href="./statistic.html" class="page-link"></a>
+                </li>
+                <li class="page-item active">
+                    <a href="./statistic.html" class="page-link">1</a>
+                </li>
+                <li class="page-item">
+                    <a href="./statistic.html" class="page-link">2</a>
+                </li>
+                <li class="page-item">
+                    <a href="./statistic.html" class="page-link">3</a>
+                </li>
+                <li class="page-item">
+                    <a href="./statistic.html" class="page-link">>></a>
+                </li>
+            </ul>
+        </div>
+
+       

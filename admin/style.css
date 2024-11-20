@@ -1,0 +1,202 @@
+/* Định dạng chung */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #333;
+    background-image: url('./DALL·E 2024-10-28 20.04.46 - A soft, pastel-colored background featuring a subtle gradient from light blue to pale pink, with a slightly blurred texture to give a calm, gentle fee.webp');
+    background-color: white; /* Chọn màu nền trắng nếu ảnh không tải được */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #2B2D42;
+    font-weight: 500;
+    transition: 0.2s color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #ddd;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 115px;
+}
+
+.inner-logo {
+    cursor: pointer;
+}
+
+.inner-user {
+    width: 60%;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.inner-user > div {
+    margin-left: 20px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 130px;
+    height: 55px;
+    border-radius: 8px;
+}
+
+.inner-user > div:hover {
+    background: beige;
+}
+
+.infor-user .avatar {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Sider */
+.sider {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 220px;
+    min-height: calc(100% - 115px);
+    background: #F3F6F9;
+    margin: 0;
+    padding: 20px 10px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.sider .inner-icon {
+    background: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.sider li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: transparent;
+    transition: background 0.4s;
+}
+
+.sider li.active {
+    background: rgb(100, 246, 163);
+}
+
+.sider li:hover {
+    background: rgb(174, 242, 227);
+}
+
+/* Content */
+.content {
+    position: absolute;
+    left: 220px;
+    height: calc(100% - 115px);
+    width: calc(100% - 220px);
+    padding: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Đăng nhập */
+.wrapper {
+    position: relative;
+    width: 500px;
+    height: 60vh; /* Chiều cao của phần đăng nhập */
+    backdrop-filter: blur(20px); /* Hiệu ứng mờ nền */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #00ffff; /* Viền màu cyan */
+    border-radius: 10px; /* Bo tròn góc */
+    box-shadow: 0 0 50px 0 #00a6bc; /* Đổ bóng */
+    background: rgba(255, 255, 255, 0.8); /* Nền hơi trong suốt */
+}
+
+.wrapper form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper form .title {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+.input-wrapper {
+    width: 70%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    background: none;
+    width: calc(100% - 20px);
+    margin-top: 40px;
+    padding-right: 10px;
+    font-size: 20px;
+    color: #0ef;
+}
+
+button.submit {
+    border: none;
+    outline: none;
+    width: 288px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(80deg, #0ef, orange);
+}
+
+/* Container cho phần đăng nhập */
+.container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao toàn bộ màn hình */
+    background: rgba(255, 255, 255, 0.5); /* Nền với độ trong suốt */
+    padding: 20px;
+}
+.table_inner-img img {
+    width: 60px; /* Đặt chiều rộng của hình ảnh bằng 100% */
+    height: auto; /* Để chiều cao tự động điều chỉnh theo tỷ lệ của hình ảnh */
+    object-fit: contain; /* Đảm bảo hình ảnh không bị méo */
+}
+
