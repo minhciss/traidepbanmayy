@@ -1,0 +1,542 @@
+<html>
+<head>
+    <title>Cửa Hàng Xe Máy Bốn Anh Em</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header .left, .header .right {
+            display: flex;
+            align-items: center;
+        }
+        .header .left img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .left span {
+            margin-right: 20px;
+        }
+        .header .right a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .header .right a i {
+            margin-right: 5px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: white;
+        }
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar select, .search-bar button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .search-bar button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+        }
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            width: 80%;
+            padding-left: 20px;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .banner img {
+            width: 32%;
+            border-radius: 10px;
+        }
+        .cart {
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .cart h3 {
+            margin-top: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 50px;
+            height: auto;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cart-table th, .cart-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .cart-table td img {
+            width: 50px;
+            height: auto;
+        }
+        .cart-table .product-name {
+            color: red;
+        }
+        .cart-table .remove {
+            color: red;
+            cursor: pointer;
+        }
+        .cart-table .remove:hover {
+            text-decoration: underline;
+        }
+        .discount-code {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .discount-code input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .discount-code button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .discount-code button:hover {
+            background-color: #ccc;
+        }
+        .cart-summary {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .cart-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-summary th, .cart-summary td {
+            padding: 10px;
+            text-align: left;
+        }
+        .cart-summary th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .cart-summary .total {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .checkout-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .checkout-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="userlogin.html"><img alt="Trai đẹp bán xe logo" height="40" src="../Đồ án xe máy/logo.jpg" width="40"/></a>
+            <span>Trai đẹp bán xe</span>
+            <span>|</span>
+            <span>19002145</span>
+            <span>|</span>
+            <span>traidepbanxe123@gmail.com</span>
+        </div>
+        <div class="right">
+            <a href="#">
+                <!-- <i class="fas fa-user-plus"> -->
+                </i>
+                Ngày mới tốt lành,Mr.lộc
+               </a>
+          
+               <a href="giohang.html">
+                <i class="fas fa-history"></i>
+             Lịch sử
+            </a>
+            <a href="index.html">
+                <i class="fas fa-sign-out-alt"></i>
+             Đăng Xuất
+            </a>
+    </div>
+    </div>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Trang chủ</a> -
+            <span>Giỏ hàng</span>
+        </div>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>SẢN PHẨM</th>
+                    <th>GIÁ</th>
+                    <th>SỐ LƯỢNG</th>
+                    <th>TẠM TÍNH</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <!-- <span class="remove">
+                            <i class="fas fa-times"></i>
+                        </span> -->
+                        <img alt="Janus màu mới 2023 (Giới Hạn)" height="50" src="data:image/jpeg;base64,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" width="50"/>
+                        <span class="product-name">YAMAHA GRANDE 2024 (Giới Hạn)</span>
+                    </td>
+                    <td>27.890.000 đ</td>
+                    <td>
+                        <!-- <input min="1" style="width: 50px; text-align: center;" type="number" value="1"/>
+                          -->
+                        1
+                    </td>
+                    <td>27.890.000 đ</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="discount-code">
+            <input placeholder="Mã ưu đãi" type="text"/>
+            <button>Áp dụng</button>
+        </div>
+        <div class="cart-summary">
+            <table>
+                <tr>
+                    <th colspan="2">CỘNG GIỎ HÀNG</th>
+                </tr>
+                <tr>
+                    <td>TẠM TÍNH</td>
+                    <td>27.890.000 đ</td>
+                </tr>
+                <tr>
+                    <td class="total">TỔNG</td>
+                    <td class="total">27.890.000 đ</td>
+                </tr>
+            </table>
+            <a class="checkout-button" href="checkout.html">TIẾN HÀNH THANH TOÁN</a>
+        </div>
+    </div>
+
+    <head>
+        <title>
+         Footer Example
+        </title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <style>
+         body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+              }
+              .footer {
+                  background-color: #f9f9f9;
+                  padding: 20px 0;
+                  text-align: center;
+                  color: #333;
+              }
+              .footer .container {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+              }
+              .footer .column {
+                  flex: 1;
+                  padding: 0 10px;
+              }
+              .footer .column h3 {
+                  font-size: 16px;
+                  font-weight: bold;
+                  margin-bottom: 10px;
+              }
+              .footer .column ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+              }
+              .footer .column ul li {
+                  margin-bottom: 5px;
+              }
+              .footer .column ul li a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .column ul li a:hover {
+                  text-decoration: underline;
+              }
+              .footer .social-media {
+                  text-align: center;
+              }
+              .footer .social-media a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .app-links {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+              }
+              .footer .app-links img {
+                  height: 40px;
+                  margin: 0 5px;
+              }
+              .footer .bottom-links {
+                  background-color: #f1f1f1;
+                  padding: 10px 0;
+                  margin-top: 20px;
+              }
+              .footer .bottom-links ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  display: flex;
+                  justify-content: center;
+              }
+              .footer .bottom-links ul li {
+                  margin: 0 10px;
+              }
+              .footer .bottom-links ul li a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .bottom-links ul li a:hover {
+                  text-decoration: underline;
+              }
+              .footer .company-info {
+                  text-align: center;
+                  margin-top: 10px;
+                  font-size: 14px;
+                  color: #666;
+              }
+        </style>
+       </head>
+       <body>
+        <div class="footer">
+         <div class="container">
+          <div class="column">
+           <h3>
+            CHĂM SÓC KHÁCH HÀNG
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              Trung Tâm Trợ Giúp
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Hướng Dẫn Mua Hàng
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Chính Sách Vận Chuyển
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="column">
+           <h3>
+            VỀ CHÚNG TÔI
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              Về Trai Đẹp Bán Xe
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Chính Sách Thanh Toán
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Điều Khoản Chính Sách
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="column">
+           <h3>
+            THEO DÕI CHÚNG TÔI
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              <i class="fab fa-facebook">
+              </i>
+              Facebook
+             </a>
+            </li>
+            <li>
+                <a href="#">
+                 <i class="fab fa-instagram">
+                 </i>
+                 Instagram
+                </a>
+               </li>
+           </ul>
+          </div>
+          
+         </div>
+         <div class="bottom-links">
+          <ul>
+           <li>
+            <a href="#">
+             CHÍNH SÁCH BẢO MẬT
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             QUY CHẾ HOẠT ĐỘNG
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             TRẢ HÀNG &amp; HOÀN TIỀN
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="company-info">
+          <p>
+           CÔNG TY  Bốn Anh Em
+          </p>
+          <p>
+           Địa chỉ: Đại Học Sài Gòn, Việt Nam.
+          </p>
+          <p>
+           Điện thoại: 19002145
+          </p>
+          <p>
+           Email: traidepbanxe123@gmail.com
+          </p>
+         </div>
+        </div>
+       </body>
+     </body>
+    </html>
+    
+</body>
+</html>
