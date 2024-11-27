@@ -12,13 +12,45 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Điều chỉnh kích thước logo */
+        .inner-logo img {
+            width: 60px; /* Đặt kích thước logo theo nhu cầu */
+        }
+    </style>
+    <style>
+        .inner-img {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .inner-img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cancel {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="inner-logo">
             <a href="./index.html">
-                <img src="https://vinfastauto.com/themes/porto/img/logo-mobile.svg" alt="Logo" srcset="">
+                <img src="logo.jpg" alt="Logo">
             </a>
         </div>
         <div class="inner-user">
@@ -48,7 +80,7 @@
             </div>
             <a href="./manage-client.html">Quản lý người dùng</a>
         </li>
-        
+
         <li class="active">
             <div class="inner-icon">
                 <i class="fa-brands fa-product-hunt"></i>
@@ -68,13 +100,15 @@
             <a href="./statistic.html">Thống kê kinh doanh</a>
         </li>
     </ul>
+
     <div class="content">
         <h2 class="mb-3">Chỉnh sửa sản phẩm</h2>
 
         <form action="./product-edit-success.html" id="form-edit" method="get">
             <div class="form-group">
-                <label for="name" >Tên sản phẩm</label>
-                <input class="form-control" type="text" name="name" id="name" value="Winner" required>
+                <label for="name">Tên sản phẩm</label>
+                <input class="form-control" type="text" name="name" id="name"
+                    value="HONDA AIR BLADE 125 2025 ĐẶC BIỆT" required>
             </div>
 
             <div class="row">
@@ -98,7 +132,7 @@
                         <option value="phone">Xe số và tay côn</option>
                         <option value="camera">Xe điện và xe 50cc</option>
                         <option value="accessory">Phụ kiện</option>
-                      </select>
+                    </select>
                 </div>
             </div>
 
@@ -107,12 +141,12 @@
                     <label for="img-product">Hình ảnh sản phẩm</label>
                     <div class="custom-file">
                         <input type="file" name="img-product" class="custom-file-input" id="img-product"
-                            aria-describedby="inputGroupFileAddon01" >
+                            aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="img-product">Chọn hình ảnh từ máy</label>
                     </div>
                     <div class="inner-img">
-                        <img src="https://hondathanhbinhan.com/wp-content/uploads/2024/01/winner-x-2024.png" alt="sản phẩm" srcset="">
-                        <span class="cancel">x</span>
+                        <img src="sp.jpg" alt="sản phẩm" id="preview-image" style="display: block;">
+                        <span class="cancel" id="remove-image">x</span>
                     </div>
                 </div>
             </div>
@@ -130,14 +164,15 @@
                 <div class="col-4">
                     <div class="form-group">
                         <label for="stock">Số lượng</label>
-                        <input class="form-control" type="number" name="stock" id="stock" min=0 value="3" required>
+                        <input class="form-control" type="number" name="stock" id="stock" min="0" value="3" required>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="form-group">
                         <label for="discount"> Giảm giá</label>
                         <div class="input-group">
-                            <input class="form-control" type="number" name="discount" step="0.01" id="discount" min="0" value="10" required>
+                            <input class="form-control" type="number" name="discount" step="0.01" id="discount" min="0"
+                                value="10" required>
                             <div class="input-group-append">
                                 <span class="input-group-text">%</span>
                             </div>
@@ -149,15 +184,37 @@
             <div class="row">
                 <div class="col-12">
                     <label for="description">Mô tả sản phẩm</label>
-                        <textarea name="description" class="description" id="description" rows="10" class="" readonly>Xe mới 100% bao zin 
+                    <textarea name="description" class="description" id="description" rows="10" readonly>Xe mới 100% bao zin 
                         </textarea>
                 </div>
             </div>
 
             <button class="btn btn-warning" type="submit"> Xác nhận thay đổi</button>
         </form>
-
     </div>
+
+    <script>
+        // Xóa hình ảnh khi nhấn vào nút x
+        document.getElementById('remove-image').addEventListener('click', function () {
+            const previewImage = document.getElementById('preview-image');
+            previewImage.style.display = 'none'; // Ẩn hình ảnh
+            document.getElementById('img-product').value = ''; // Reset input file
+        });
+
+        // Hiển thị lại hình ảnh khi chọn file mới
+        document.getElementById('img-product').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const previewImage = document.getElementById('preview-image');
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block'; // Hiển thị hình ảnh mới
+                };
+                reader.readAsDataURL(file); // Đọc file ảnh
+            }
+        });
+    </script>
 </body>
 
 </html>
