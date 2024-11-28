@@ -13,9 +13,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Điều chỉnh kích thước logo */
         .inner-logo img {
-            width: 60px; /* Đặt kích thước logo theo nhu cầu */
+            width: 60px;
         }
     </style>
 </head>
@@ -78,22 +77,23 @@
 
         <h4 class="mb-3">Danh sách người dùng</h4>
 
-        <table class="table table-hover table-bordered text-center ">
+        <table class="table table-hover table-bordered text-center">
             <thead class="bg-success">
-                <th>STT</th>
-                <th>Tên người dùng</th>
-                <th>Hình ảnh</th>
-                <th>Tình trạng</th>
-                <th>Hành động</th>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên người dùng</th>
+                    <th>Hình ảnh</th>
+                    <th>Tình trạng</th>
+                    <th>Hành động</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
                     <td>Nguyễn Trung Nghĩa</td>
-<td class="table_inner-img">
-    <img class="avarta" src="https://tgroup.vn/uploads/images/korea-tour-package/chup-anh-the-tai-han-quoc-tgroup-travel-5.jpg" alt="" style="width: 30px; height: auto;">
-</td>
-
+                    <td class="table_inner-img">
+                        <img class="avarta" src="https://tgroup.vn/uploads/images/korea-tour-package/chup-anh-the-tai-han-quoc-tgroup-travel-5.jpg" alt="" style="width: 30px; height: auto;">
+                    </td>
                     <td>
                         <span class="badge badge-success">Hoạt động</span>
                     </td>
@@ -101,7 +101,7 @@
                         <button class="btn btn-sm btn-warning">
                             <a href="./client-edit.html">Sửa</a>
                         </button>
-                        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModal">Mở khóa</button>
+                        <button class="btn btn-sm btn-danger" onclick="confirmAction('Khóa tài khoản này?')">Khóa</button>
                         <button class="btn btn-sm btn-primary">
                             <a href="./client-detail.html">Chi tiết</a>
                         </button>
@@ -109,9 +109,9 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Nguyễn Thị  Minh</td>
+                    <td>Nguyễn Thị Minh</td>
                     <td class="table_inner-img">
-                        <img class="avarta" src="https://bizweb.dktcdn.net/100/175/849/files/chup-anh-chan-dung-lam-ho-so-nop-thcs-thpt-thi-vao-lop-10-cao-dang-dai-hoc-03.jpg?v=1594895178127" alt=""  style="width: 30px; height: auto;">
+                        <img class="avarta" src="https://bizweb.dktcdn.net/100/175/849/files/chup-anh-chan-dung-lam-ho-so-nop-thcs-thpt-thi-vao-lop-10-cao-dang-dai-hoc-03.jpg?v=1594895178127" alt="" style="width: 30px; height: auto;">
                     </td>
                     <td>
                         <span class="badge badge-success">Hoạt động</span>
@@ -120,7 +120,7 @@
                         <button class="btn btn-sm btn-warning">
                             <a href="./client-edit.html">Sửa</a>
                         </button>
-                        <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">Khóa</button>
+                        <button class="btn btn-sm btn-danger" onclick="confirmAction('Khóa tài khoản này?')">Khóa</button>
                         <button class="btn btn-sm btn-primary">
                             <a href="./client-detail.html">Chi tiết</a>
                         </button>
@@ -128,18 +128,18 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Nguyễn Văn Bảy </td>
+                    <td>Nguyễn Văn Bảy</td>
                     <td class="table_inner-img">
                         <img class="avarta" src="https://img2.thuthuatphanmem.vn/uploads/2019/05/06/anh-the-dep-cho-nam_100828142.jpg" alt="" style="width: 30px; height: auto;">
                     </td>
                     <td>
-                        <span class="badge badge-danger">Dừng hoạt động</span>
+                        <span class="badge badge-success"> Hoạt động</span>
                     </td>
                     <td class="table_inner-btn">
                         <button class="btn btn-sm btn-warning">
                             <a href="./client-edit.html">Sửa</a>
                         </button>
-                        <button class="btn btn-sm btn-success" >Mở khóa</button>
+                        <button class="btn btn-sm btn-danger" onclick="confirmAction('Mở khóa tài khoản này?')">Khóa</button>
                         <button class="btn btn-sm btn-primary">
                             <a href="./client-detail.html">Chi tiết</a>
                         </button>
@@ -158,7 +158,7 @@
                         <button class="btn btn-sm btn-warning">
                             <a href="./client-edit.html">Sửa</a>
                         </button>
-                        <button class="btn btn-sm btn-danger" >Khóa</button>
+                        <button class="btn btn-sm btn-danger" onclick="confirmAction('Khóa tài khoản này?')">Khóa</button>
                         <button class="btn btn-sm btn-primary">
                             <a href="./client-detail.html">Chi tiết</a>
                         </button>
@@ -166,29 +166,21 @@
                 </tr>
             </tbody>
         </table>
-
-        <div class="inner-pagination">
-            <ul class="pagination">
-                <li class="page-item ">
-                    <a href="./manage-client.html" class="page-link"><<</a>
-                </li>
-                <li class="page-item active">
-                    <a href="./manage-client.html" class="page-link">1</a>
-                </li>
-                <li class="page-item">
-                    <a href="./manage-client.html" class="page-link">2</a>
-                </li>
-                <li class="page-item">
-                    <a href="./manage-client.html" class="page-link">3</a>
-                </li>
-                <li class="page-item">
-                    <a href="./manage-client.html" class="page-link">>></a>
-                </li>
-            </ul>
-        </div>
-        
     </div>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script>
+    function confirmAction(message) {
+        const userConfirmed = confirm(message);
+        if (userConfirmed) {
+            alert("Hành động đã thực hiện!");
+        } else {
+            alert("Hành động đã bị hủy.");
+        }
+    }
+</script>
+
 </html>
