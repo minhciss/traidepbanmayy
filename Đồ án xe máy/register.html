@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Đăng Kí</h2>
+        <form action="process_login.php" method="POST">
+            <div class="user-box">
+                <input type="text" name="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="address" id="address" required>
+                <label for="address">Address</label>
+            <div class="user-box">
+                <input type="text" name="username" id="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="repeat_password" id="repeat_password" required>
+                <label for="repeat_password">Repeat Password</label>
+            </div>
+            <a id="submitBtn" href="login.html">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </a>
+            
+        </form>
+    </div>
+    <script >
+    // Lấy thẻ <a> bằng ID
+const submitButton = document.getElementById('submitBtn');
+
+// Gắn sự kiện click vào thẻ <a>
+submitButton.addEventListener('click', function () {
+    // Hiển thị thông báo thành công
+    alert('Đăng ký thành công!');
+
+    // Chuyển hướng sang trang login.html
+    window.location.href = 'login.html';
+});
+
+    </script>
+</body>
+</html>
