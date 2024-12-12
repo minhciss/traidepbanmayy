@@ -1,0 +1,670 @@
+<html>
+<head>
+    <title>Cửa Hàng Xe Máy Bốn Anh Em</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header .left, .header .right {
+            display: flex;
+            align-items: center;
+        }
+        .header .left img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .left span {
+            margin-right: 20px;
+        }
+        .header .right a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        .header .right a i {
+            margin-right: 5px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: white;
+        }
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar select, .search-bar button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .search-bar button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+        }
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .content {
+            width: 80%;
+            padding-left: 20px;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+        .carousel .prev, .carousel .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .carousel .prev {
+            left: 10px;
+        }
+        .carousel .next {
+            right: 10px;
+        }
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .banner img {
+            width: 32%;
+            border-radius: 10px;
+        }
+        .cart {
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .cart h3 {
+            margin-top: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 50px;
+            height: auto;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cart-table th, .cart-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .cart-table td img {
+            width: 50px;
+            height: auto;
+        }
+        .cart-table .product-name {
+            color: red;
+        }
+        .cart-table .remove {
+            color: red;
+            cursor: pointer;
+        }
+        .cart-table .remove:hover {
+            text-decoration: underline;
+        }
+        .discount-code {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .discount-code input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .discount-code button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .discount-code button:hover {
+            background-color: #ccc;
+        }
+        .cart-summary {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .cart-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-summary th, .cart-summary td {
+            padding: 10px;
+            text-align: left;
+        }
+        .cart-summary th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .cart-summary .total {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .checkout-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .checkout-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="userlogin.html"><img alt="Trai đẹp bán xe logo" height="40" src="../Đồ án xe máy/logo.jpg" width="40"/></a>
+            <span>Trai đẹp bán xe</span>
+            <span>|</span>
+            <span>19002145</span>
+            <span>|</span>
+            <span>traidepbanxe123@gmail.com</span>
+        </div>
+        <div class="right">
+            <a href="#">
+                <!-- <i class="fas fa-user-plus"> -->
+                </i>
+                Ngày mới tốt lành,Mr.lộc
+               </a>
+            <a class="ml-4 text-gray-800" href="cart.html" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                Giỏ hàng (
+                <span id="">
+                 1
+                </span>
+                )
+               </a>
+            
+            <a href="index.html">
+                <i class="fas fa-sign-out-alt"></i>
+             Đăng Xuất
+            </a>
+    </div>
+    </div>
+    <style>
+        body {
+                 font-family: Arial, sans-serif;
+                 margin: 0;
+                 padding: 0;
+                 background-color: #f5f5f5;
+             }
+             .container {
+                 width: 100%;
+                 margin: 20px auto;
+                 background-color: #fff;
+                 border-radius: 5px;
+                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                 overflow: hidden;
+             }
+             table {
+                 width: 100%;
+                 border-collapse: collapse;
+             }
+             th, td {
+                 padding: 15px;
+                 text-align: left;
+             }
+             th {
+                 background-color: #f0f0f0;
+                 color: #333;
+                 font-weight: bold;
+             }
+             td {
+                 border-bottom: 1px solid #e0e0e0;
+             }
+             .order-info {
+                 display: flex;
+                 align-items: center;
+             }
+             .order-info img {
+                 width: 20px;
+                 height: 20px;
+                 margin-right: 10px;
+             }
+             .status {
+                 padding: 5px 10px;
+                 border-radius: 5px;
+                 color: #fff;
+                 font-weight: bold;
+             }
+             .status.processing {
+                 background-color: #d87c00;
+             }
+             .status.delivered {
+                 background-color: #28a745;
+             }
+             .action-button, .details-button {
+                 padding: 5px 10px;
+                 border: 1px solid #28a745;
+                 border-radius: 5px;
+                 color: #28a745;
+                 background-color: #fff;
+                 cursor: pointer;
+                 margin-right: 5px;
+             }
+             .action-button:hover, .details-button:hover {
+                 background-color: #28a745;
+                 color: #fff;
+             }
+             .checkbox {
+                 margin-right: 10px;
+             }
+       </style>
+      </head>
+      <body>
+       <div class="container">
+        <table>
+         <thead>
+          <tr>
+           <th>
+            THÔNG TIN ĐƠN HÀNG
+           </th>
+           <th>
+            NGÀY TẠO
+           </th>
+           <th>
+            TRẠNG THÁI
+           </th>
+           <th>
+            TỔNG TIỀN
+           </th>
+           <th>
+            HÀNH ĐỘNG
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td class="order-info">
+            <img alt="Order Icon" height="20" src="../Đồ án xe máy/sp6.webp" width="20"/>
+            HD32265
+           </td>
+           <td>
+            23/04/2024 09:23
+           </td>
+           <td>
+            <span class="status delivered">
+                Đã giao
+            </span>
+           </td>
+           <td>
+            858.560.000 VND
+           </td>
+           <td>
+            <button class="action-button">
+             Đã giao
+            </button>
+            <a href="chitietdonhang.html"><button class="details-button">
+             Chi tiết đơn hàng
+            </button>
+          </a>
+           </td>
+          </tr>
+          <tr>
+           <td class="order-info">
+            <img alt="Order Icon" height="20" src="../Đồ án xe máy/sp6.webp" width="20"/>
+            HD87474 
+           </td>
+           <td>
+            16/04/2024 18:22
+           </td>
+           <td>
+            <span class="status delivered">
+             Đã giao
+            </span>
+           </td>
+           <td>
+            486.549.000 VND
+           </td>
+           <td>
+            <button class="action-button">
+             Đã giao
+            </button>
+            <a href="chitietdonhang.html"><button class="details-button">
+                Chi tiết đơn hàng
+               </button>
+             </a>
+           </td>
+          </tr>
+          <tr>
+           <td class="order-info">
+            <img alt="Order Icon" height="20" src="../Đồ án xe máy/sp6.webp"width="20"/>
+            HD43342 
+           </td>
+           <td>
+            15/04/2024 12:00
+           </td>
+           <td>
+            <span class="status delivered">
+             Đã giao
+            </span>
+           </td>
+           <td>
+            953.689.000 VND
+           </td>
+           <td>
+            <button class="action-button">
+             Đã giao
+            </button>
+            <a href="chitietdonhang.html"><button class="details-button">
+                Chi tiết đơn hàng
+               </button>
+             </a>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+
+    
+       
+       <head>
+        <title>
+         Footer Example
+        </title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+        <style>
+         body {
+                  font-family: Arial, sans-serif;
+                  margin: 0;
+                  padding: 0;
+              }
+              .footer {
+                  background-color: #f9f9f9;
+                  padding: 20px 0;
+                  text-align: center;
+                  color: #333;
+              }
+              .footer .container {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+              }
+              .footer .column {
+                  flex: 1;
+                  padding: 0 10px;
+              }
+              .footer .column h3 {
+                  font-size: 16px;
+                  font-weight: bold;
+                  margin-bottom: 10px;
+              }
+              .footer .column ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+              }
+              .footer .column ul li {
+                  margin-bottom: 5px;
+              }
+              .footer .column ul li a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .column ul li a:hover {
+                  text-decoration: underline;
+              }
+              .footer .social-media {
+                  text-align: center;
+              }
+              .footer .social-media a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .app-links {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+              }
+              .footer .app-links img {
+                  height: 40px;
+                  margin: 0 5px;
+              }
+              .footer .bottom-links {
+                  background-color: #f1f1f1;
+                  padding: 10px 0;
+                  margin-top: 20px;
+              }
+              .footer .bottom-links ul {
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  display: flex;
+                  justify-content: center;
+              }
+              .footer .bottom-links ul li {
+                  margin: 0 10px;
+              }
+              .footer .bottom-links ul li a {
+                  text-decoration: none;
+                  color: #333;
+              }
+              .footer .bottom-links ul li a:hover {
+                  text-decoration: underline;
+              }
+              .footer .company-info {
+                  text-align: center;
+                  margin-top: 10px;
+                  font-size: 14px;
+                  color: #666;
+              }
+        </style>
+       </head>
+       <body>
+        <div class="footer">
+         <div class="container">
+          <div class="column">
+           <h3>
+            CHĂM SÓC KHÁCH HÀNG
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              Trung Tâm Trợ Giúp
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Hướng Dẫn Mua Hàng
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Chính Sách Vận Chuyển
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="column">
+           <h3>
+            VỀ CHÚNG TÔI
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              Về Trai Đẹp Bán Xe
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Chính Sách Thanh Toán
+             </a>
+            </li>
+            <li>
+             <a href="#">
+              Điều Khoản Chính Sách
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="column">
+           <h3>
+            THEO DÕI CHÚNG TÔI
+           </h3>
+           <ul>
+            <li>
+             <a href="#">
+              <i class="fab fa-facebook">
+              </i>
+              Facebook
+             </a>
+            </li>
+            <li>
+                <a href="#">
+                 <i class="fab fa-instagram">
+                 </i>
+                 Instagram
+                </a>
+               </li>
+           </ul>
+          </div>
+          
+         </div>
+         <div class="bottom-links">
+          <ul>
+           <li>
+            <a href="#">
+             CHÍNH SÁCH BẢO MẬT
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             QUY CHẾ HOẠT ĐỘNG
+            </a>
+           </li>
+           <li>
+            <a href="#">
+             TRẢ HÀNG &amp; HOÀN TIỀN
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="company-info">
+          <p>
+           CÔNG TY  Bốn Anh Em
+          </p>
+          <p>
+           Địa chỉ: Đại Học Sài Gòn, Việt Nam.
+          </p>
+          <p>
+           Điện thoại: 19002145
+          </p>
+          <p>
+           Email: traidepbanxe123@gmail.com
+          </p>
+         </div>
+        </div>
+       </body>
+     </body>
+    </html>
+    
+      </body>
+     </html>
+
+     
